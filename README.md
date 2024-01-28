@@ -1,4 +1,4 @@
-# MAIN-PROJECT-CHARITYSCHEME-AND-FUNDTRACKING-USING-BLOCKCHAIN
+# MAIN-PROJECT-CHARITYSCHEME-AND-FUNDTRACKER-USING-BLOCKCHAIN
 
 Nowadays, people are becoming voracious to contribute to society. Many people want
 to donate generously for the causes they believe in but usually end up doing nothing due
