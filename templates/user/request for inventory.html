@@ -1,0 +1,71 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+<body>
+<style>
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-container input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+        flex: 1;
+    }
+
+    .search-container input[type="submit"] {
+        padding: 8px 15px;
+        border: 1px solid #007bff;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="search_inv">
+  <table width="261" border="1" class="table table-striped">
+      <div   class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>REQUEST INVENTORY</b></div>
+
+        <div class="row">
+            <div class="col-lg-10">
+      <div class="search-container mt-3 mb-3">
+    <input type="text" class="w-25" name="textfield" placeholder="Department/Inventory" />
+    <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+</div>
+            </div>
+
+
+            <div class="col-lg-2">
+                <a href="/myreq" class="btn btn-warning mt-3 mb-3"><i class="bi bi-balloon-heart"></i> My Requests</a>
+
+            </div>
+
+        </div>
+
+    <tr>
+      <th>Slno</th>
+      <th>Department</th>
+      <th>Inventory</th>
+      <th>Description</th>
+      <th>stock</th>
+      <th>&nbsp;</th>
+      </tr>
+        {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.department.d_name }}</td>
+      <td>&nbsp;{{ i.inventory }}</td>
+      <td>&nbsp;{{ i.description }}&nbsp;</td>
+      <td>&nbsp;&nbsp;{{ i.stock }}</td>
+      <td><a href="/req_inv/{{ i.id }}" class="btn btn-success">Request</a></td>
+    </tr>
+                  {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

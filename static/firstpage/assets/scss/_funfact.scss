@@ -1,0 +1,172 @@
+.funfact-one {
+  &--m-margin-top {
+    margin-top: -6.25rem;
+  }
+
+  &__inner {
+    background-color: #fff;
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background-color: #8139e7;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include devices(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include devices(xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding: 9px 0;
+  }
+
+  &__item + &__item {
+    @include devices(md) {
+      border-left: 1px solid $paroti-border;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $paroti-black;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1em;
+    margin-bottom: 7px;
+
+    @include devices(md) {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 1.2em;
+  }
+}
+
+.funfact-two {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-color: $paroti-gray;
+  background-blend-mode: luminosity;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $paroti-gray;
+    opacity: 0.9;
+  }
+
+  &__shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/shapes/funfact-bg-1-1.png);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__list {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    @media (min-width: 992px) {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 0px;
+    }
+
+    &__item {
+      position: relative;
+      --accent-color: #{$paroti-base};
+      &:not(:last-child)::before {
+        content: "";
+        width: 1px;
+        height: 139px;
+        position: absolute;
+        top: 50%;
+        right: -100px;
+        transform: translateY(-50%);
+        background-color: #fff;
+        display: none;
+        @media (min-width: 992px) {
+          display: block;
+        }
+      }
+    }
+
+    &__icon {
+      width: 119px;
+      height: 119px;
+      background-color: var(--accent-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 57px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      transition: all 500ms ease;
+      i {
+        transition: all 500ms ease;
+        transform: scale(1);
+      }
+    }
+
+    &__item:hover &__icon {
+      background-color: $paroti-black;
+      color: #ffffff;
+      i {
+        transform: scale(0.9);
+      }
+    }
+
+    &__count {
+      margin: 0;
+      color: $paroti-black;
+      font-size: 40px;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 11px;
+    }
+    &__text {
+      margin: 0;
+      line-height: 1;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}

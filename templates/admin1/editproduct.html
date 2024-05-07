@@ -1,0 +1,53 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'admin1/index.html' %}
+{% block body %}
+
+<body>
+<form action="/editproductcode" method="post"enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered table-dark" style="width:100%;">
+        <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD FOODCHART</b></td>
+  </tr>
+    <tr>
+      <td width="172">Product Name </td>
+      <td width="63"><label>
+        <input type="text" name="textfield" value="{{ val.productname }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><label>
+
+        <input type="file" name="file" />
+           <img src="{{ val.image.url }}" width="40dp" height="40dp">
+      </label></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" name="textfield3"  value="{{ val.Description }}"/></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><input type="text" name="textfield4" value="{{ val.price }}0"/></td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td><input type="text" name="textfield5" value="{{ val.stock }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label> </label>
+        <div align="center">
+          <input type="submit" name="Submit" value="SAVE" />
+        </div></td>
+    </tr>
+  </table>
+<label></label>
+</form>
+</body>
+{#</html>#}{% endblock %}
+

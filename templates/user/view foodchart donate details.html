@@ -1,0 +1,52 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/search_donation_date">
+  <table width="275" border="1" class="table table-responsive  table-striped">
+    <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>FOODCHART DONATION DETAILS</b></td>
+  </tr>
+  <tr>
+      <th colspan="6">Date
+      <input type="date" name="date" required value="{{ date }}" class="btn btn-light"/>
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>User</th>
+
+{#      <td width="29">Action</td>#}
+
+
+{#      <td width="25">Day</td>#}
+      <th>Day Time </th>
+      <th>Type</th>
+        <th>Amount</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.date }}</td>
+
+      <td>&nbsp;{{ i.userid.fname }}{{ i.userid.lname }}</td>
+
+{#        <td><a  href="view_food_details/{{ i.foodchart.id }}" class="btn btn-link">View Details</a></td>#}
+{#      <td>&nbsp;{{ i.foodchart.day }}</td>#}
+      <td>{{ i.foodchart.daytime }}</td>
+      <td>{{ i.foodchart.daytype }}</td>
+      <td>&nbsp;{{ i.amount }}0</td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

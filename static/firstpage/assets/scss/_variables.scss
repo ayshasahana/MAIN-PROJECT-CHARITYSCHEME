@@ -1,0 +1,33 @@
+:root {
+	--paroti-font: 'Manrope', sans-serif;
+	--paroti-base: #df5311;
+	--paroti-base-rgb: 222, 82, 18;
+	--paroti-primary: #138999;
+	--paroti-primary-rgb: 19, 137, 153;
+	--paroti-secondary: #fdbe44;
+	--paroti-secondary-rgb: 253, 190, 68;
+	--paroti-black: #144047;
+	--paroti-black-rgb: 20, 64, 71;
+	--paroti-dark: #002c33;
+	--paroti-dark-rgb: 0, 44, 51;
+	--paroti-text: #768385;
+	--paroti-gray: #f1f6f7;
+	--paroti-border: #dde8ea;
+	--paroti-light: #8fa6aa;
+}
+
+$paroti-font: var(--paroti-font, 'Manrope', sans-serif);
+$paroti-base: var(--paroti-base, #df5311);
+$paroti-base-rgb: var(--paroti-base-rgb, 222, 82, 18);
+$paroti-primary: var(--paroti-primary, #138999);
+$paroti-primary-rgb: var(--paroti-primary-rgb, 19, 137, 153);
+$paroti-secondary: var(--paroti-secondary, #fdbe44);
+$paroti-secondary-rgb: var(--paroti-secondary-rgb, 253, 190, 68);
+$paroti-black: var(--paroti-black, #144047);
+$paroti-black-rgb: var(--paroti-black-rgb, 20, 64, 71);
+$paroti-dark: var(--paroti-dark, #002c33);
+$paroti-dark-rgb: var(--paroti-dark-rgb, 0, 44, 51);
+$paroti-text: var(--paroti-text, #768385);
+$paroti-gray: var(--paroti-gray, #f1f6f7);
+$paroti-border: var(--paroti-border, #dde8ea);
+$paroti-light: var(--paroti-light, #8fa6aa);

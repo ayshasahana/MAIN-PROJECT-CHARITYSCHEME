@@ -1,0 +1,624 @@
+.donations-card {
+  --accent-color: #{$paroti-base};
+  background-color: #fff;
+
+  &__image {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 1em;
+    padding: 11.5px 19.5px;
+    transition: all 500ms ease;
+
+    a {
+      color: inherit;
+    }
+
+    &:hover {
+      background-color: $paroti-black;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.07);
+    border-top: 4px solid var(--accent-color);
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25em;
+    color: $paroti-black;
+    letter-spacing: -0.04em;
+    margin-bottom: 13px;
+    margin-top: -17px;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+
+      @include borderHover;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    border-bottom: 1px solid $paroti-border;
+    padding-bottom: 20px;
+  }
+
+  .bar {
+    width: 100%;
+    height: 6px;
+    background-color: $paroti-gray;
+    position: relative;
+    border-radius: 3px;
+    margin-top: 49px;
+  }
+
+  .bar-inner {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--accent-color);
+    transition: all 1000ms ease;
+
+    .count-text {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      color: var(--accent-color);
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1em;
+      padding-bottom: 9px;
+    }
+  }
+
+  &__amount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: -9px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: $paroti-text;
+      display: inline-flex;
+      align-items: baseline;
+
+      span {
+        color: $paroti-black;
+        font-weight: bold;
+        font-size: 18px;
+        letter-spacing: -0.04em;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+[class*="col-"]:nth-child(2) {
+  .donations-card {
+    --accent-color: #8139e7;
+  }
+}
+
+[class*="col-"]:nth-child(3) {
+  .donations-card {
+    --accent-color: #fdbe44;
+  }
+}
+
+[class*="col-"]:nth-child(4) {
+  .donations-card {
+    --accent-color: #138999;
+  }
+}
+
+[class*="col-"]:nth-child(5) {
+  .donations-card {
+    --accent-color: #ceaa6a;
+  }
+}
+
+[class*="col-"]:nth-child(6) {
+  .donations-card {
+    --accent-color: #2ec58e;
+  }
+}
+
+.donations-details {
+  .donations-card .bar {
+    margin-top: 5px;
+  }
+
+  .donations-card__content {
+    margin-bottom: 30px;
+  }
+
+  .donations-card__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 2.125rem;
+  }
+
+  &__content {
+    img {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin: 0 0 1.875rem;
+    }
+  }
+
+  &__list {
+    margin: 0 0 1.875rem;
+
+    li {
+      font-size: 18px;
+      font-weight: 800;
+      color: $paroti-black;
+      letter-spacing: -0.04em;
+      position: relative;
+      padding-left: 24px;
+
+      + li {
+        margin-top: 4px;
+      }
+
+      i {
+        color: $paroti-base;
+        position: absolute;
+        top: 8px;
+        left: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 30px;
+
+    @media (max-width: 479px) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      background-color: $paroti-gray;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: all 0.5s ease;
+      font-size: 14px;
+      color: $paroti-black;
+
+      &:hover {
+        background-color: $paroti-black;
+        color: #ffffff;
+      }
+
+      + a {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__presentation {
+    padding: 3.125rem;
+    background-color: $paroti-gray;
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    @include devices(md) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    i {
+      font-size: 50px;
+      color: $paroti-base;
+    }
+
+    &__title {
+      margin: 0;
+      color: $paroti-black;
+      letter-spacing: -0.04em;
+      font-size: 26px;
+      font-weight: 800;
+      margin-top: 15px;
+      margin-bottom: 20px;
+
+      @include devices(md) {
+        margin: 0;
+        margin-left: 20px;
+      }
+    }
+
+    &__btn {
+      @include devices(md) {
+        margin-left: auto;
+      }
+
+      &::before {
+        background-color: $paroti-primary;
+      }
+    }
+  }
+}
+
+.donations-carousel {
+  position: relative;
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .tns-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease;
+
+    &.tns-slide-active {
+      opacity: 1;
+      visibility: visible;
+
+      + .tns-item {
+        @include devices(xl) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .tns-nav {
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: calc(100% + 84px);
+    right: 0;
+    display: none;
+    @media (min-width: 992px) {
+      display: flex;
+    }
+    button {
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border: 2px solid $paroti-black;
+      border-radius: 50%;
+      transition: all 500ms ease;
+      &:hover,
+      &.tns-nav-active {
+        background-color: $paroti-black;
+      }
+      + button {
+        margin-left: 6px;
+      }
+    }
+  }
+}
+
+.donation-two {
+  background-color: $paroti-gray;
+  position: relative;
+  &::before {
+    background-color: $paroti-gray;
+    content: "";
+    background-image: url(../images/shapes/donation-2-bg-1-1.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    animation: bgSlide 20s linear infinite;
+  }
+  .container {
+    position: relative;
+  }
+
+  &__carousel {
+    .owl-stage-outer {
+      overflow: visible;
+    }
+    .owl-item {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 500ms ease, visibility 500ms ease;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        + .owl-item {
+          @media (min-width: 992px) {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: -25px;
+  }
+}
+
+.donation-card-two {
+  padding: 50px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
+  --accent-color: #{$paroti-base};
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    background-image: url(../images/shapes/donation-card-two-bg-1.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    transform: scale(1, 0);
+    transform-origin: bottom center;
+    transition: transform 500ms ease;
+  }
+
+  &:hover &__bg {
+    transform: scale(1, 1);
+  }
+
+  &__title {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.5em;
+    color: $paroti-black;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    margin-top: -7px;
+    a {
+      color: inherit;
+      transition: all 500ms ease;
+      @include borderHover;
+    }
+  }
+
+  &:hover &__title a {
+    color: #fff;
+  }
+
+  &__text {
+    position: relative;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8666666666666667em;
+    color: $paroti-text;
+    margin-top: 14px;
+    margin-bottom: 25px;
+    margin-right: -3px;
+    transition: all 500ms ease;
+  }
+
+  &:hover &__text {
+    color: #fff;
+    opacity: 0.9;
+  }
+  &__icon {
+    position: relative;
+    color: var(--accent-color);
+    font-size: 64px;
+    display: inline-block;
+    bottom: -5px;
+    transition: all 500ms ease;
+  }
+
+  &:hover &__icon {
+    color: #fff;
+  }
+  &__link {
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    width: 43px;
+    height: 43px;
+    background-color: $paroti-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $paroti-black;
+    font-size: 12px;
+    transition: all 500ms ease;
+    &:hover {
+      color: #fff;
+      background-color: rgba($paroti-black-rgb, 0.1);
+    }
+  }
+  &:hover &__link {
+    color: #fff;
+    background-color: rgba($paroti-black-rgb, 0.1);
+  }
+
+  &__shape {
+    width: 64px;
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+  }
+}
+
+.donation-home-3 {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  &__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 480px;
+    background-color: $paroti-gray;
+    @include devices(md) {
+      height: 490px;
+    }
+    @include devices(lg) {
+      height: 483px;
+    }
+    @include devices(xl) {
+      height: 544px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(../images/shapes/donation-2-bg-1-1.png);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.03;
+      background-position: bottom center;
+      background-repeat: repeat-x;
+      animation: bgSlide 20s linear infinite;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__carousel {
+    .owl-stage-outer {
+      overflow: visible;
+    }
+    .owl-item {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 500ms ease, visibility 500ms ease;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.donation-card-three {
+  --accent-color: #8139e7;
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+  &__content {
+    background-color: var(--accent-color);
+    text-align: center;
+    background-image: url(../images/shapes/donation-3-1.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  &__icon {
+    width: 126px;
+    height: 126px;
+    background-color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--accent-color);
+    position: relative;
+    border-radius: 50%;
+    font-size: 60px;
+    margin-top: -63px;
+    z-index: 9;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      bottom: -8px;
+      left: -8px;
+      right: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    i {
+      transition: transform 500ms ease;
+      transform: scale(1);
+    }
+  }
+  &:hover &__icon {
+    i {
+      transform: scale(0.9);
+    }
+  }
+  &__title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    a {
+      color: inherit;
+      @include borderHover;
+    }
+  }
+  &__text {
+    margin: 0;
+    color: #fff;
+    opacity: 0.7;
+    line-height: 1.875em;
+    padding-bottom: 53.4px;
+  }
+}

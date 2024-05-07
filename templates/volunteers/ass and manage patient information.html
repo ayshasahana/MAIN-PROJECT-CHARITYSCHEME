@@ -1,0 +1,66 @@
+{% extends 'volunteers/volindex.html' %}
+
+{% block body %}
+
+<style>
+  .icon-blue {
+    color: blue;
+  }
+
+  .icon-red {
+    color: red;
+  }
+
+  .icon-black {
+    color: black;
+  }
+</style>
+
+<body>
+  <form id="form1" name="form1" method="post" action="searchpatient">
+    <div class="container">
+      <div class="card mt-5">
+        <div class="card-header bg-dark text-white">
+          <h3 class="card-title">ADD & MANAGE PATIENTS</h3>
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="textfield" placeholder="Search by name" />
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+          <div class="row">
+            {% for i in val %}
+            <div class="col-md-6 mb-3">
+              <div class="card shadow p-3">
+                <div class="card-body">
+                  <h5 class="card-title"><b>{{ i.fname }} {{ i.lname }}</b></h5>
+                  <img src="{{ i.Image.url }}"  style="max-width: 150px" class="img-fluid" alt="{{ i.fname }} {{ i.lname }}">
+                  <p class="card-text">Gender: {{ i.gender }}</p>
+                  <p class="card-text">DOB: {{ i.dob }}  </p>
+{#                  <p class="card-text"> </p>#}
+                  <p class="card-text">Phone: {{ i.phone }}</p>
+                  <p class="card-text">Joining Date: {{ i.sdate }}</p>
+                  <p class="card-text">Disease: {{ i.disease }}</p>
+                  {% if i.status != 'disabled' %}
+                  <a href="editpatient1/{{ i.id }}" class="btn btn-primary">Edit</a>
+                  <a href="deletepai/{{ i.id }}" class="btn btn-danger">Disable</a>
+                  {% else %}
+                  <a href="enabelepai/{{ i.id }}" class="btn btn-success">Enable</a>
+                  {% endif %}
+                <a href="{{ i.idproof.url }}" class="btn btn-secondary" download>Download your prescription</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+  <center>
+  <a href="/add_patients" class="btn btn-primary w-25">+ Add</a>
+     <a href="/disable_patientinfo" class="btn btn-primary  w-25">View disable patient</a>
+
+      </center>
+  </form>
+</body>
+{% endblock %}

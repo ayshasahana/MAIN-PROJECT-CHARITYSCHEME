@@ -1,0 +1,65 @@
+.gallery-one {
+  padding-top: 7.5rem;
+  @media (min-width: 1200px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -6.25rem;
+  }
+  &--home-3 {
+    padding: 7.5rem 0;
+    margin: 0;
+    .container-fluid {
+      @media (min-width: 768px) {
+        padding-left: 8.5625rem;
+        padding-right: 8.5625rem;
+      }
+    }
+    .gallery-one__carousel .owl-stage-outer {
+      @media (min-width: 1200px) {
+        overflow: hidden;
+      }
+    }
+  }
+  &__carousel {
+    .owl-stage-outer {
+      @media (min-width: 1200px) {
+        overflow: visible;
+      }
+    }
+  }
+}
+
+.gallery-card {
+  overflow: hidden;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($paroti-base-rgb, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease;
+    a {
+      color: #fff;
+      font-size: 40px;
+      transition: all 500ms ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &:hover &__content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

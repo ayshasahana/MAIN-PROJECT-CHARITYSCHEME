@@ -1,0 +1,77 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/oredercartproduct">
+  <table  class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>VIEW MY CART</b></td>
+  </tr>
+    <tr>
+      <th>Product</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Qty*Price</th>
+      <td>&nbsp;</td>
+    </tr>
+              {% for i in val %}
+
+    <tr>
+      <td>{{ i.product.productname }}</td>
+      <td><img src="media/{{ i.product.image }}" width="70px" height="70px"></td>
+      <td>{{ i.product.price }}</td>
+      <td>{{ i.quantity }}</td>
+        <td>{{ i.price}}</td>
+
+
+     <td><a href="/deleteviewproduct/{{ i.id }}/{{ i.quantity}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+
+        {% endfor %}
+
+      <tr><td colspan="6" align="center">
+
+          <b>Total : </b> <input type="text" name="textfield" value="{{ total }}0"  />
+
+          <input type="text" name="textfield2" value="{{ oid }}"   id="hiddenField" />
+
+      </td></tr>
+   <tr>
+      <td colspan="6">
+        <div align="center">
+          <input type="submit" name="Submit" value="ORDER NOW" class="btn btn-primary  text-white " />
+          </div>
+    </td>
+    </tr>
+
+
+
+
+  </table>
+
+<script>
+  // Get the input field element by its ID
+  var hiddenField = document.getElementById('hiddenField');
+
+  // Check if you want to hide the input field
+  var shouldHideField = true;  // Change this condition based on your logic
+
+  // If the condition is met, hide the input field
+  if (shouldHideField) {
+    hiddenField.style.display = 'none';
+  }
+</script>
+</form>
+</body>
+{% endblock %}
+
+
+{#</html>#}

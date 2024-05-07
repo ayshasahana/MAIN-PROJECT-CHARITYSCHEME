@@ -1,0 +1,36 @@
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/search_need_and_donate_details">
+  <table width="412" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>NEED DONATION DETAILS</b></td>
+  </tr>
+    <tr>
+      <th colspan="4">Date
+      <input type="date" name="date" required value="{{ date }}" class="btn btn-light"/>
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary" /></th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Need</th>
+        <td></td>
+    </tr>
+        {% for i in val %}
+    <tr>
+          <td>{{ i.date }}</td>
+      <td>{{ i.userid}}</td>
+      <td>{{ i.amount }}.00</td>
+      <td>&nbsp;{{ i.needid }}</td>
+    <td></td>
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

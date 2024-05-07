@@ -1,0 +1,84 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'department/depindex.html' %}
+{% block body %}
+
+<style>
+
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
+.icon-black{
+    color: black;
+}
+</style>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/searchvol#about">
+  <table width="283" border="1" class="table table-striped">
+     <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD & MANAGE VOLUNTEERS</b></td>
+  </tr>
+
+    <tr>
+      <th colspan="11">Volunteer
+      <input type="text" name="textfield"  placeholder="name/gender/place"/>
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary" /></th>
+    </tr>
+    <tr>
+        <th >Sl No</th>
+      <th >Name</th>
+      <th >Gender</th>
+      <th >Address</th>
+      <th >Phone</th>
+      <th >Email</th>
+
+      <th >Aadhar no</th>
+      <th >Edit </th>
+      <th >Disable</th>
+    </tr>
+       {% for i in val %}
+{#           <script  type="text/javascript">#}
+{#$(function () {#}
+{#    $('table tr').each(function () {#}
+{#        if ( i.status  == 'disabled') {#}
+{#            $(this).find('.tt').prop('disabled', true);#}
+{#        }#}
+{#        else {#}
+{#            $(this).find('.tt').prop('disabled', false);#}
+{#        }#}
+{#    });#}
+{#});#}
+{#</script>#}
+    <tr id="tt">
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.fname }}{{ i.lname  }} <br><img src="media/{{ i.photo }}" width="70px" height="70px"></td>
+      <td>{{ i.gender }}</td>
+      <td>{{ i.place }} ,{{ i.post }} ,{{ i.pin }}</td>
+      <td>{{ i.phone }}</td>
+      <td>{{ i.email }}</td>
+
+      <td>{{ i.aadharno }}</td>
+      {% if i.status != 'disabled' %}  <td><a href="editvol/{{ i.id }}"><h3><i class="bi bi-pencil-square icon-blue" ></i></h3></a></td>
+        <td><a href="deletevol/{{ i.id }}"><h3><i class="bi bi-ban icon-red "></i></h3></a></td>{% else %}
+    <td colspan="2"><a href="enabelevol/{{ i.id }}"><i class="text-success">Enable</i></a> </td>{% endif %}
+    </tr>
+        {% endfor %}
+
+    <tr>
+      <td colspan="9"><div align="center"><a href="add_volunteer#about"><h3><i class="bi bi-plus-square-fill icon-black" ></i></h3></a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+{#</html>#}

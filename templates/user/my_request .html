@@ -1,0 +1,34 @@
+{% extends 'user/userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="261" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>MY REQUEST</b></td>
+  </tr>
+    <tr>
+ <th>Date</th>
+      <th>Inventory</th>
+ <th>Reason</th>
+        <th>Quantity</th>
+
+      <th>Status</th>
+      </tr>
+        {% for i in val %}
+    <tr>
+     <td>&nbsp;{{ i.date }}&nbsp;</td>
+      <td>&nbsp;{{ i.inventory.inventory }}</td>
+      <td>{{ i.reason }}</td>
+      <td>&nbsp;{{ i.stock }}</td>
+
+      <td>&nbsp;&nbsp;{{ i.status }}</td>
+
+    </tr>
+                  {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

@@ -1,0 +1,77 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+
+{% extends 'department/depindex.html' %}
+{% block body %}
+
+    <style>
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
+.icon-black{
+    color: black;
+}
+</style>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_and_manage_inventory_search">
+  <table width="283" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>ADD & MANAGE INVENTORY</b></td>
+  </tr>
+<tr>
+      <th colspan="6">Inventory
+      <input type="text" name="textfield" />
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th>Slno</th>
+
+      <th>Department</th>
+         <th>Inventory</th>
+      <th>Description</th>
+      <th>Stock</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+
+    </tr>
+              {% for i in val %}
+
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.department.d_name }}</td>
+              <td>{{ i.inventory }}</td>
+
+      <td>&nbsp;{{ i.description }}</td>
+      <td>&nbsp;{{ i.stock }}</td>
+{#      <td><a href="/edit_inv1/{{ i.id }}">Edit</a></td>#}
+{#      <td><a href="/delete_inv/{{ i.id }}">Delete</a></td>#}
+    <td  width="100"><p><a href="edit_inv1/{{ i.id }}" style="width:100px;height: 100px;"><h3><i class="bi bi-pencil-square icon-blue" ></i></h3></a></p></td>
+      <td  width="100"><p><a href="delete_inv/{{ i.id }}"style="width:100px;height: 100px;"><h3><i class="bi bi-trash3 icon-red "></i></h3></a></p></td>
+
+    </tr>
+             {% endfor %}
+
+
+    <tr>
+        <td colspan="7"><div align="center"><a href="add_inventory#about"><h3><i class="bi bi-plus-square-fill icon-black" ></i></h3></a></div></td>
+
+{#      <td colspan="5"><div align="center"><a href="addinvcode">#}
+{#        <input type="submit" name="Submit" value="ADD" />#}
+{#      </a></div></td>#}
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

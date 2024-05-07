@@ -1,0 +1,161 @@
+.faq-one {
+  position: relative;
+  background-color: $paroti-black;
+  overflow: hidden;
+  padding: 7.5rem 0;
+  @include devices(xl) {
+    padding: 0 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.08;
+    background-color: $paroti-black;
+    background-blend-mode: color-dodge;
+    background-position: top left;
+  }
+  .container {
+    position: relative;
+  }
+
+  &__content {
+    @include devices(xl) {
+      padding: 7.5rem 0;
+    }
+  }
+
+  .sec-title__tagline {
+    color: $paroti-light;
+  }
+  .sec-title__title {
+    color: #fff;
+  }
+
+  &__content {
+    &__text {
+      margin-top: -30px;
+      color: $paroti-light;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__accordion {
+    background-color: #10383e;
+    padding-left: 30px;
+    padding-right: 30px;
+    &__item {
+      border: 0;
+      border-radius: 0;
+      background-color: rgba(0, 0, 0, 0);
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    &__header {
+      font-family: $paroti-font;
+    }
+    &__button {
+      outline: none;
+      box-shadow: none;
+      border: none;
+      color: #fff;
+      border-radius: 0;
+      background-color: rgba(0, 0, 0, 0);
+      padding: 27px 0;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      position: relative;
+      @include devices(lg) {
+        font-size: 18px;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+      &:not(.collapsed) {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fff;
+        box-shadow: none;
+        .faq-one__accordion__icon {
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            background-color: $paroti-secondary;
+          }
+        }
+      }
+      &::after {
+        display: none;
+      }
+    }
+    &__icon {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+      display: block;
+      &::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 500ms ease;
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+      }
+    }
+    &__collapse {
+    }
+    &__body {
+      color: $paroti-light;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      padding: 21px 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    &::before {
+      content: "";
+      width: 22px;
+      height: calc(100% - 15rem);
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%);
+      background-color: $paroti-secondary;
+    }
+    @include devices(xl) {
+      margin-left: 75px;
+    }
+    img {
+      max-width: 100%;
+      position: relative;
+      @include devices(xl) {
+        max-width: none;
+      }
+    }
+  }
+}

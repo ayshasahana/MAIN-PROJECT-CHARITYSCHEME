@@ -1,0 +1,42 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/search_order_history">
+  <table width="261" border="1" class="table table-striped">
+        <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>VIEW ORDER HISTORY</b></td>
+  </tr>
+    <tr>
+      <th colspan="5">Date
+      <input type="date" name="d"  value="{{ i.d }}" />
+      <input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></td>
+    </tr>
+    <tr>
+          <th >Date</th>
+        <th>User</th>
+
+      <th>Amount</th>
+        <td></td>
+    </tr>
+        {% for i in val %}
+    <tr>
+          <td>{{ i.date }}</td>
+
+      <td>&nbsp;{{ i.userid.fname }} {{ i.userid.lname }}</td>
+      <td>{{ i.amount }}0</td>
+      <td><a href="/view_item_product/{{ i.id }}" class="btn btn-primary">view item</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

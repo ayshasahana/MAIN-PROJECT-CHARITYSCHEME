@@ -1,0 +1,815 @@
+.about-one {
+  position: relative;
+
+  .container {
+    position: relative;
+  }
+
+  &__shape-1,
+  &__shape-2 {
+    position: absolute;
+    display: none;
+
+    @include devices(lg) {
+      display: block;
+    }
+  }
+
+  &__shape-1 {
+    top: 20px;
+    left: 0;
+  }
+
+  &__shape-2 {
+    bottom: 0;
+    right: 0;
+  }
+
+  &__images {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: -20px;
+      bottom: 50px;
+      right: 0;
+      background-color: $paroti-secondary;
+    }
+
+    img {
+      position: relative;
+
+      &:nth-child(2) {
+        display: none;
+        position: absolute;
+        bottom: -50px;
+        right: -100px;
+
+        @include devices(xl) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include devices(xl) {
+      padding-left: 70px;
+    }
+  }
+
+  .sec-title {
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__tagline {
+    color: $paroti-base;
+    font-size: 20px;
+    line-height: 1.5em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.375rem;
+  }
+
+  &__list {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    padding-bottom: 2.6875rem;
+
+    @include devices(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      background-color: $paroti-gray;
+      display: flex;
+      align-items: center;
+      padding: 14.5px 30px;
+      color: $paroti-black;
+      font-size: 16px;
+      font-weight: 800;
+
+      i {
+        color: $paroti-primary;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__meta {
+    position: relative;
+    margin-top: 2.625rem;
+
+    img {
+      float: left;
+      border-radius: 50%;
+      border: 8px solid #ffffff;
+      box-shadow: 0 0 0 2px $paroti-base;
+      margin-right: 20px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: $paroti-black;
+    letter-spacing: -0.04em;
+    line-height: 1em;
+    margin-bottom: 10px;
+    padding-top: 22px;
+  }
+
+  &__designation {
+    line-height: 1em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+  }
+}
+
+.about-two {
+  position: relative;
+  &__shape-1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__image {
+    display: inline-block;
+    position: relative;
+    @media (min-width: 1200px) {
+      margin-bottom: 60px;
+    }
+
+    &__shape-1 {
+      width: 27px;
+      height: 30px;
+      background-color: $paroti-secondary;
+      position: absolute;
+      top: 30px;
+      right: 100%;
+    }
+
+    &__shape-2 {
+      position: absolute;
+      display: none;
+      background-color: $paroti-gray;
+      position: absolute;
+      top: 60px;
+      left: -60px;
+      right: -60px;
+      bottom: -60px;
+      @media (min-width: 1200px) {
+        display: block;
+      }
+    }
+
+    &__shape-3 {
+      position: absolute;
+      display: none;
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 180px;
+      height: 171px;
+      background-color: #fff;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 6px solid $paroti-secondary;
+        z-index: 10;
+      }
+      @media (min-width: 1200px) {
+        display: block;
+      }
+    }
+    img {
+      max-width: 100%;
+      position: relative;
+    }
+
+    &__caption {
+      background-color: $paroti-primary;
+      text-align: center;
+      padding: 45px 0;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        width: 50px;
+        height: 60px;
+        background-color: $paroti-primary;
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        display: none;
+        @media (min-width: 1200px) {
+          display: block;
+        }
+      }
+      @media (min-width: 1200px) {
+        position: absolute;
+        right: 100%;
+        bottom: -60px;
+        width: 200px;
+        height: 196px;
+        z-index: 10;
+      }
+      &__count {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin: 0;
+        line-height: 1em;
+        margin-bottom: 16px;
+      }
+      &__text {
+        margin: 0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.25em;
+        font-weight: 500;
+        max-width: 101px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__content {
+    @media (min-width: 1200px) {
+      padding-left: 70px;
+    }
+  }
+
+  .sec-title {
+    padding-bottom: 40px;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    margin: 0;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      --accent-color: #{$paroti-primary};
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 63px;
+        color: var(--accent-color);
+        position: relative;
+        margin-right: 20px;
+        &::after {
+          content: "";
+          width: 49px;
+          height: 49px;
+          background-color: var(--accent-color);
+          opacity: 0.1;
+          position: absolute;
+          bottom: -10px;
+          right: -10px;
+          border-radius: 50%;
+        }
+      }
+    }
+    &__title {
+      color: $paroti-black;
+      font-size: 20px;
+      line-height: 1.5em;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    margin-bottom: 50px;
+    li {
+      font-size: 16px;
+      font-weight: 500;
+      padding-left: 26px;
+      position: relative;
+      i {
+        position: absolute;
+        font-size: 16px;
+        color: $paroti-secondary;
+        top: 8px;
+        left: 0;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.about-three {
+  padding: 0 0 7.5rem;
+  position: relative;
+  &__shape {
+    position: absolute;
+    top: -7.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/shapes/about-3-1.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
+  @include devices(lg) {
+    padding: 0;
+  }
+  .container {
+    position: relative;
+  }
+  &__text {
+    margin-top: -22px;
+    padding-bottom: 31px;
+  }
+  &__image {
+    position: relative;
+    @include devices(xl) {
+      margin-left: 30px;
+    }
+    &::before {
+      content: "";
+      width: 10000px;
+      position: absolute;
+      left: 210px;
+      top: 0rem;
+      bottom: 0rem;
+      display: none;
+      background-color: $paroti-secondary;
+      @include devices(lg) {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 170px;
+      width: 12px;
+      height: 90px;
+      background-color: $paroti-base;
+    }
+    @include devices(lg) {
+      padding: 7.5rem 0;
+    }
+    img {
+      position: relative;
+      max-width: 100%;
+      @include devices(lg) {
+        max-width: none;
+      }
+    }
+  }
+  &__content {
+    @include devices(lg) {
+      padding: 7.5rem 0;
+    }
+  }
+  &__list {
+    margin: 0;
+    &__item {
+      --accent-color: #{$paroti-base};
+      position: relative;
+      padding-left: 95px;
+      &:not(:last-child) {
+        padding-bottom: 31px;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      &::before {
+        content: "";
+        width: 49px;
+        height: 49px;
+        background-color: var(--accent-color);
+        opacity: 0.1;
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        border-radius: 50%;
+      }
+      i {
+        position: relative;
+        color: var(--accent-color);
+        font-size: 60px;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 800;
+      color: $paroti-black;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+    &__text {
+      margin: 0;
+      margin-top: 3px;
+    }
+  }
+}
+
+.about-four {
+  background-color: #fff;
+  background-image: url(../images/shapes/about-4-1.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: relative;
+  &__shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .container {
+    position: relative;
+  }
+
+  &__image {
+    position: relative;
+    @include devices(xl) {
+      margin-bottom: 20px;
+    }
+    &::before {
+      content: "";
+      width: 71.28205128205128%;
+      height: calc(100% - 50px);
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background-color: $paroti-base;
+      display: none;
+      @include devices(xl) {
+        display: block;
+      }
+    }
+    img {
+      position: relative;
+      max-width: 100%;
+      @include devices(xl) {
+        max-width: none;
+      }
+    }
+  }
+
+  &__video {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $paroti-secondary;
+    width: 8.625rem;
+    height: 8.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    transition: all 500ms ease;
+    font-size: 1.875rem;
+    @include devices(xl) {
+      right: -15px;
+      bottom: -20px;
+    }
+    &:hover {
+      background-color: $paroti-black;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    @include devices(xl) {
+      padding-left: 70px;
+    }
+
+    &__text {
+      color: $paroti-base;
+      font-size: 24px;
+      line-height: 1.5em;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0;
+      position: relative;
+      top: -9px;
+      padding-bottom: 28px;
+    }
+  }
+
+  &__list {
+    &__item {
+      position: relative;
+      padding-left: 88px;
+      padding-bottom: 36px;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      > i {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 58px;
+        height: 58px;
+        background-color: $paroti-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: $paroti-primary;
+        font-size: 20px;
+        transition: all 500ms ease;
+      }
+      &:hover {
+        > i {
+          background-color: $paroti-primary;
+          color: $paroti-gray;
+        }
+      }
+    }
+
+    &__title {
+      margin: 0;
+      color: $paroti-black;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 9px;
+    }
+    &__text {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+}
+
+.about-five {
+  background-color: #fff;
+  background-image: url(../images/shapes/about-4-1.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: relative;
+
+  &__content {
+    position: relative;
+    &__arrow {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 124px;
+      height: 85px;
+      background-repeat: no-repeat;
+      background-image: url(../images/shapes/about-5-arrow-1.png);
+    }
+  }
+
+  &__text {
+    margin-top: -25px;
+    padding-bottom: 20px;
+  }
+
+  &__blockquote {
+    background-color: $paroti-gray;
+    padding: 15px 0;
+    padding-left: 30px;
+    padding-right: 56px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: $paroti-black;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    line-height: 1.7334em;
+    position: relative;
+    margin-bottom: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 30px;
+      height: 20px;
+      background-color: $paroti-gray;
+      clip-path: polygon(0 0, 0% 100%, 100% 0);
+    }
+    > i {
+      font-size: 32px;
+      color: $paroti-secondary;
+      margin-right: 19px;
+    }
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+    &__image {
+      img {
+        border-radius: 50%;
+        border: 8px solid #ffffff;
+        box-shadow: 0 0 0 2px $paroti-base;
+        margin-right: 18px;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 800;
+      color: $paroti-black;
+      letter-spacing: -0.04em;
+      margin: 0;
+      line-height: 1;
+      margin-bottom: 13px;
+    }
+    &__designation {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin: 0;
+      line-height: 1em;
+    }
+  }
+
+  &__item {
+    background-color: var(--accent-color);
+    padding: 40px;
+
+    &__icon {
+      display: flex;
+      justify-content: flex-end;
+      color: #fff;
+      margin-bottom: 35px;
+      i {
+        font-size: 72px;
+      }
+    }
+
+    &__title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+      line-height: 1em;
+      margin-bottom: 11px;
+      a {
+        color: inherit;
+        @include borderHover;
+      }
+    }
+    &__tagline {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin: 0;
+      line-height: 1em;
+      opacity: 0.7;
+      color: #fff;
+    }
+  }
+}
+
+.about-six {
+  background-color: $paroti-gray;
+  position: relative;
+  &--pad-bottom {
+    padding-bottom: 12.8125rem;
+  }
+  &--pad-top {
+    padding-top: 7.1875rem;
+  }
+  .container {
+    position: relative;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $paroti-gray;
+    opacity: 0.1;
+    background-position: top left;
+    background-repeat: no-repeat;
+    mix-blend-mode: luminosity;
+    display: none;
+    @include devices(lg) {
+      display: block;
+    }
+  }
+  &__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+
+  &__images {
+    position: relative;
+    display: inline-flex;
+    &::before {
+      content: "";
+      width: 14px;
+      height: 230px;
+      background-color: $paroti-secondary;
+      position: absolute;
+      top: 0;
+      right: -34px;
+    }
+    img {
+      max-width: 100%;
+      &:nth-child(2) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include devices(md) {
+          left: auto;
+          right: -165px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    &__text {
+      margin-top: -25px;
+      margin-bottom: 37px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    margin: 0;
+    margin-bottom: 35px;
+    @include devices(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      position: relative;
+      padding-left: 30px;
+    }
+    &__icon {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      font-size: 20px;
+      color: $paroti-primary;
+    }
+    &__title {
+      margin: 0;
+      font-size: 20px;
+      color: $paroti-black;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      margin: 0;
+      margin-bottom: 3px;
+    }
+    &__text {
+      margin: 0;
+    }
+  }
+  &__btns {
+    display: flex;
+  }
+}

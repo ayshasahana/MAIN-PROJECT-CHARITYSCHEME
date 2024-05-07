@@ -1,0 +1,68 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/addfoodchart_code">
+  <table  class="table table-bordered table-dark" style="width:100%;">
+      <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD FOODCHART</b></td>
+  </tr>
+{#    <tr>#}
+{#      <td width="48">Day</td>#}
+{#      <td width="177"><label>#}
+{#        <select name="select">#}
+{#           <option>Sunday</option>#}
+{#          <option>Monday</option>#}
+{#          <option>Tuesday</option>#}
+{#          <option>Wednesday</option>#}
+{#          <option>Thusday</option>#}
+{#          <option>Friday</option>#}
+{#          <option>Saturday</option>#}
+{##}
+{#        </select>#}
+{#      </label></td>#}
+{#    </tr>#}
+    <tr>
+      <td>Day Time </td>
+      <td><select name="select2">
+          <option>BreakFast</option>
+          <option>Lunch</option>
+          <option>Evening</option>
+          <option>Dinner</option>
+          <option></option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><select name="select3">
+
+        <option>Normal</option>
+        <option>Special</option>
+
+ </select></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><label>
+      <input type="number
+" name="textfield" />
+      </label></td>
+    </tr>
+   <tr>
+      <td colspan="9"><div align="center">
+          <button type="submit" class="btn btn-secondary   text-white ">Save</button></div>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}{% endblock %}
+

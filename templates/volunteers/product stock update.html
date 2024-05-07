@@ -1,0 +1,37 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'volunteers/volindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="258" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>UPDATE PRODUCT</b></td>
+  </tr>
+    <tr>
+      <th>Product</th>
+      <th>Image</th>
+      <th>Stock</th>
+      <td>&nbsp;</td>
+    </tr>
+                   {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{ i.productname }}</td>
+      <td><img src="{{ i.image.url }}" height="150" width="150"></td>
+      <td>&nbsp;{{ i.stock }}</td>
+      <td><a href="/updatepro/{{ i.id }}" class="btn btn-primary">Update</a></td>
+    </tr>
+                    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

@@ -1,0 +1,76 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+
+    <style>
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
+.icon-black{
+    color: black;
+}
+</style>
+
+<body>
+<div class="table-responsive">
+<form id="form1" name="form1" method="post" action="/search_product">
+  <table border="1" class="table  table-striped">
+  <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>ADD AND MANAGE PRODUCT</b></td>
+  </tr>
+    <tr>
+      <th colspan="10">Product name
+        <label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+      </label></th>
+    </tr>
+    <tr>
+      <th> Slno </th>
+      <th>Product name </th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Stock</th>
+      <th>Price</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th></th>
+    </tr>
+            {% for i in val %}
+
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.productname }}</td>
+      <td><img src="media/{{ i.image }}" width="80px" height="80px"></td>
+      <td>&nbsp;{{ i.Description }}</td>
+      <td>{{ i.stock }}</td>
+      <td>{{ i.price }}0</td>
+{#      <td><a href="editproduct/{{ i.id }}">Edit</a></td>#}
+{#      <td><a href="delete_product/{{ i.id }}">Delete</a></td>#}
+     <td  width="100"><p><a href="editproduct/{{ i.id }}" style="width:100px;height: 100px;"><h3><i class="bi bi-pencil-square icon-blue" ></i></h3></a></p></td>
+      <td  width="100"><p><a href="delete_product/{{ i.id }}"style="width:100px;height: 100px;"><h3><i class="bi bi-trash3 icon-red "></i></h3></a></p></td>
+
+    </tr>
+                          {% endfor %}
+
+    <tr>
+        <td colspan="10"><div align="center"><a href="/add_product#about"><h3><i class="bi bi-plus-square-fill icon-black" ></i></h3></a></div></td>
+
+{#      <td colspan="10"><div align="center"><a href="/add_product">ADD</a></div></td>#}
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+{% endblock %}
+
+{#</html>#}

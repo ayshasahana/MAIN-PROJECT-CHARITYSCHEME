@@ -1,0 +1,59 @@
+{% extends 'admin1/index.html' %}
+{% block body %}
+    <style>
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
+.icon-black{
+    color: black;
+}
+</style>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table border="1" class="table table-striped">
+  <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD & MANAGE FOODCHART</b></td>
+
+  </tr>
+{#    <tr>#}
+{#      <th colspan="7">Day#}
+{#          <input type="text" name="textfield" />#}
+{#          <input type="submit" name="Submit" value="Search" class="btn btn-primary" />#}
+{#    </tr>#}
+    <tr>
+{#      <th >Day</th>#}
+      <th>Day Time </th>
+      <th >Type</th>
+      <th >Amount</th>
+      <th >Edit</th>
+{#      <th >Delete</th>#}
+        <td></td>
+    </tr>
+       {% for i in val %}
+    <tr>
+{#      <td>{{ i.day }}</td>#}
+      <td>{{ i.daytime }}</td>
+      <td>{{ i.daytype }}</td>
+      <td>{{ i.amount }}0</td>
+{#        <td> <a href="/editfoodchart/{{ i.id }}">Edit</a></td>#}
+{#      <td><a href="/deletefoodchart/{{ i.id }}">Delete</a></td>#}
+        <td  width="100"><p><a href="editfoodchart/{{ i.id }}" style="width:100px;height: 100px;"><h3><i class="bi bi-pencil-square icon-blue" ></i></h3></a></p></td>
+{#        <td  width="100"><p><a href="deletefoodchart/{{ i.id }}"style="width:100px;height: 100px;"><h3><i class="bi bi-trash3 icon-red "></i></h3></a></p></td>#}
+
+    <td></td>
+    </tr>
+        {% endfor %}
+
+    <tr>
+      <td colspan="9"><div align="center">
+          <a href="addfoodchart" class="btn btn-lg "><i class="bi bi-plus-square-fill icon-black"  ></i></a></div>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

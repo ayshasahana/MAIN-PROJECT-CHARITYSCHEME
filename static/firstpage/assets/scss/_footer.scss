@@ -1,0 +1,162 @@
+.site-footer {
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__top {
+		padding-top: 7.375rem;
+		padding-bottom: 4.375rem;
+	}
+
+	&__social {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		a {
+			width: 40px;
+			height: 40px;
+			background-color: $paroti-dark;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			transition: all 0.5s ease;
+			font-size: 14px;
+			color: #ffffff;
+
+			&:hover {
+				background-color: $paroti-base;
+				color: #ffffff;
+			}
+
+			+a {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	&__bottom {
+		&__inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			border-top: 1px solid rgba(#ffffff, .1);
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+
+			@include devices(sm) {
+				justify-content: space-between;
+			}
+		}
+
+		&__text {
+			margin: 0;
+			font-size: 15px;
+			font-weight: 500;
+			color: $paroti-light;
+			margin-bottom: 10px;
+
+			@include devices(sm) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__widget {
+		margin-bottom: 30px;
+
+		&__cta {
+
+			@include devices(xl) {
+				margin-left: -28px;
+			}
+		}
+
+		&__text {
+			font-weight: 500;
+			color: $paroti-light;
+			font-size: 15px;
+			line-height: 2em;
+			border-top: 1px solid rgba(255, 255, 255, .1);
+		}
+
+		&__title {
+			margin: 0;
+			font-size: 20px;
+			color: #ffffff;
+			font-weight: 800;
+			margin-bottom: 40px;
+
+			span {
+				position: relative;
+			}
+		}
+
+		&__cta &__title span {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 80%;
+				left: 110%;
+				width: 18px;
+				height: 26px;
+				background-image: url(../images/shapes/footer-btn-arrow.png);
+				background-repeat: no-repeat;
+				z-index: 10;
+				animation: btnIconMove 4s linear 0ms infinite;
+			}
+		}
+
+		&__contact,
+		&__links {
+			margin: 0;
+			margin-top: -15px;
+			margin-bottom: -14px;
+
+			li {
+				color: $paroti-light;
+				font-size: 15px;
+				font-weight: 500;
+				line-height: 2.4em;
+
+				a {
+					color: inherit;
+					transition: color 500ms ease;
+
+					&:hover {
+						color: #ffffff;
+					}
+				}
+			}
+		}
+
+		&__contact {
+			li {
+				position: relative;
+				padding-left: 28px;
+
+				i {
+					position: absolute;
+					color: $paroti-secondary;
+					font-size: 14px;
+					top: 11px;
+					left: 0;
+				}
+			}
+		}
+
+		&__about &__logo {
+			position: relative;
+			top: -18px;
+			display: inline-block;
+		}
+
+		&__about &__text {
+			margin-top: 12px;
+			padding-top: 30px;
+		}
+	}
+
+}

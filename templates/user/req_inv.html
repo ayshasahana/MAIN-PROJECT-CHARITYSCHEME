@@ -1,0 +1,46 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'department/depindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/request_inv">
+  <table class="table table-bordered table-dark" >
+
+       <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD REQUEST</b></td>
+  </tr><tr>
+      <th>Inventory</th>
+      <td>{{ val.inventory }}</td>
+    </tr><tr>
+      <th>Department</th>
+      <td>{{ val.department.d_name }}</td>
+    </tr><tr>
+      <th>Stock</th>
+      <td>{{ val.stock }}</td>
+    </tr>
+    <tr>
+      <th>Quantity</th>
+      <td><input type="number" name="textfield" required/></td>
+    </tr>
+    <tr>
+      <th>Reason</th>
+       <td><label>
+          <textarea name="textfield2" ></textarea>
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SAVE" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+{#</html>#}

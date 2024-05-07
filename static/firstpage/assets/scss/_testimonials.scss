@@ -1,0 +1,363 @@
+.testimonials-one {
+  position: relative;
+  background-color: $paroti-primary;
+
+  &--bottom-pd-lg {
+    padding-bottom: 7.5rem;
+    @media (min-width: 1200px) {
+      padding-bottom: 13.75rem;
+    }
+    .testimonials-one__gallery img:nth-child(4) {
+      bottom: 242px;
+    }
+    .testimonials-one__gallery img:nth-child(5) {
+      bottom: 195px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-color: $paroti-primary;
+    opacity: 0.15;
+    mix-blend-mode: luminosity;
+  }
+
+  &__gallery {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      opacity: 0.5;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.07);
+      animation-duration: 4s;
+
+      &:nth-child(1) {
+        top: 85px;
+        right: 53%;
+      }
+
+      &:nth-child(2) {
+        top: 60px;
+        right: 30%;
+        animation-delay: 0.7s;
+      }
+
+      &:nth-child(3) {
+        top: 270px;
+        right: 230px;
+      }
+
+      &:nth-child(4) {
+        bottom: 147px;
+        animation-delay: 0.7s;
+        right: 58%;
+      }
+
+      &:nth-child(5) {
+        bottom: 95px;
+        right: 40%;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: #fff;
+    opacity: 0.7;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    &:hover {
+      color: $paroti-black;
+    }
+
+    &::before {
+      background-color: $paroti-black;
+    }
+
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  .sec-title {
+    padding-bottom: 30px;
+  }
+
+  .sec-title__tagline {
+    color: #8bd1da;
+  }
+
+  .sec-title__title {
+    color: #fff;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .thm-tns__carousel {
+    margin-bottom: 31px;
+  }
+
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .tns-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease;
+
+    &.tns-slide-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.testimonials-card {
+  background-color: #fff;
+  border-left: 4px solid $paroti-secondary;
+  position: relative;
+  padding: 3.75rem;
+  padding-bottom: 1.875rem;
+
+  &::before {
+    content: "";
+    width: 86px;
+    height: 31px;
+    background-color: $paroti-secondary;
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+  }
+
+  &::after {
+    content: "";
+    width: 86px;
+    height: 31px;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 62px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+  }
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 3.75rem;
+    right: 3.75rem;
+    font-size: 54px;
+    color: $paroti-secondary;
+    display: none;
+
+    @media (min-width: 481px) {
+      display: block;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-size: 1.25rem;
+    line-height: 2.375rem;
+    margin-top: -12px;
+    margin-bottom: 22px;
+  }
+
+  &__meta {
+    position: relative;
+
+    img {
+      float: left;
+      border-radius: 50%;
+      border: 8px solid #ffffff;
+      box-shadow: 0 0 0 2px $paroti-base;
+      margin-right: 22px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: $paroti-black;
+    letter-spacing: -0.04em;
+    line-height: 1em;
+    margin-bottom: 10px;
+    padding-top: 22px;
+  }
+
+  &__designation {
+    line-height: 1em;
+    margin: 0;
+  }
+}
+
+.testimonials-two {
+  background-color: $paroti-base;
+  position: relative;
+  padding: 7.5rem 0;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/shapes/funfact-bg-1-1.png);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    display: none;
+    @include devices(lg) {
+      display: block;
+    }
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/backgrounds/testimonials-2-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.1;
+    background-blend-mode: luminosity;
+  }
+  .container {
+    position: relative;
+  }
+  &__thumb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    @include devices(xl) {
+      display: block;
+    }
+    .swiper-slide {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+        opacity: 1;
+        transition: all 500ms ease;
+      }
+      &.swiper-slide-thumb-active {
+        img {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .swiper-pagination-bullets {
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    bottom: auto;
+    left: auto;
+    @include devices(lg) {
+      padding-left: 70px;
+      justify-content: flex-start;
+    }
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 16px;
+      background-color: rgba(255, 255, 255, 0);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transition: all 500ms ease;
+      opacity: 1;
+      line-height: 1;
+      margin: 0;
+
+      + .swiper-pagination-bullet {
+        margin-left: 6px;
+      }
+      &:hover,
+      &-active {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &__carousel {
+    @include devices(xl) {
+      margin-left: 88px;
+    }
+  }
+}
+
+.testimonials-two__card {
+  position: relative;
+  @include devices(md) {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__image {
+    margin-bottom: 30px;
+    @include devices(md) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+  &__text {
+    margin: 0;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.6667em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    padding-bottom: 30px;
+    @include devices(md) {
+      margin-top: -11px;
+    }
+    @include devices(lg) {
+      font-size: 24px;
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0px;
+  }
+  &__designation {
+    color: #f5c9b4;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+  }
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 54px;
+    color: $paroti-secondary;
+  }
+}

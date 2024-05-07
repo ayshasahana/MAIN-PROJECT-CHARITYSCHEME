@@ -1,0 +1,49 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/search1">
+  <table width="406" border="1" class="table table-striped">
+
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>TRANSACTION HISTORY</b></td>
+  </tr>
+
+    <tr>
+      <th >Slno</th>
+      <th >Need</th>
+        <a href=""></a>
+      <th >Department</th>
+      <th style="width: 200px;">Date</th>
+      <th >Amount</td>
+      <td ></td>
+      <td ></td>
+{#      <td ></td>#}
+        <td ></td>
+    </tr>
+             {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.needid.needs }}</td>
+      <td>{{ i.needid.department.d_name}}</td>
+      <td width="100">{{ i.date}}</td>
+      <td>{{ i.amount}}0 <br></td>
+      <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

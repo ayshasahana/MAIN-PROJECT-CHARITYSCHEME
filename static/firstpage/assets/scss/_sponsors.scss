@@ -1,0 +1,22 @@
+.sponsor-carousel {
+  border-top: 1px solid $paroti-border;
+  &--home-2 {
+    border-top: 0;
+    border-bottom: 1px solid $paroti-border;
+  }
+  &--home-3 {
+    background-color: $paroti-gray;
+    background-size: cover;
+    background-position: top center;
+    border: none;
+  }
+  img {
+    max-width: 100%;
+    opacity: 0.3;
+    transition: all 500ms ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

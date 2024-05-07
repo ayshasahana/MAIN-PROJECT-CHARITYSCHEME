@@ -1,0 +1,225 @@
+{% extends 'volunteers/volindex.html' %}
+{% block body %}
+
+<body>
+<form action="/editpatientcode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered table-dark" style="width:100%;" >
+         <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>EDIT PATIENT INFORMATION</b></td>
+  </tr>
+    <tr>
+      <td>FName</td>
+      <td><input type="text" name="textfield"  pattern="[A-Z a-z.]{3,25}" value="{{ val.fname }}" id="fname" title="Name must be in characters" required /><p id="falert"></p></td>
+    </tr>
+       <td>LName</td>
+      <td><input type="text" name="textfield1" pattern="[A-Z a-z.]{0,25}"  value="{{ val.lname }}" id="lname"/><p id="lalert"></p></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="radiobutton" type="radio" value="Male"  {% if val.gender == 'Male'  %} checked {% endif %}/>
+        Male
+        <input name="radiobutton" type="radio" value="Female" {% if val.gender == 'Female'  %} checked {% endif %} />
+        Female</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><input type="date" name="date" value="{{dob}}"/></td>
+    </tr>
+        <tr>
+      <td>sdate</td>
+      <td><input type="date" name="date1" value="{{date}}"/></td>
+    </tr>
+
+
+{#    <tr>#}
+{#      <td>Place</td>#}
+{#      <td><input type="text" name="textfield3"  pattern="[A-Z a-z.]{3,25}" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Post</td>#}
+{#      <td><input type="text" name="textfield4"  pattern="[A-Z a-z.]{3,25}"  id="post"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>pin</td>#}
+{#      <td><input type="text" name="textfield5" required pattern="[0-9]{6}"  id="pin"/><p id="pialert"></p></td>#}
+{#    </tr>#}
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" name="textfield6"   pattern="[6789][0-9]{9}" id="phone"  value="{{ val.phone }}"/><p id="phalert"></p></td>
+    </tr>
+    <tr>
+      <td>Disease</td>
+      <td><textarea name="textarea"  >{{ val.disease }}</textarea></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="file" accept="image/*"/>
+      <img src="{{ val.Image.url }}" width="100px" height="100px"></td>
+    </tr>
+       <tr>
+      <td>Id </td>
+      <td><input type="file" name="file1" accept="application/pdf/*"/>
+          <a href="{{ val.idproof.url}}" download="">{{ val.idproof }}</a></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SAVE" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript" src="../static/home/reg/js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="../static/home/reg/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#un").keyup(function () {
+      var username = $(this).val();
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/reg",
+        data:{
+                 username: username
+
+
+        },
+        dataType: 'json',
+        success: function( data )
+        {
+
+            if (data.is_taken) {
+            document.getElementById("uu").innerText="Username is already existing";
+          }
+          else
+            { document.getElementById("uu").innerText="";}
+        }
+     })
+  });
+$('#fname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#falert').css('color', 'red');
+            $("#falert").html("Only Characters allowed")
+              $('#fname').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#fname').removeAttr('style');
+              $('#falert').removeAttr('style');
+        }
+    });
+
+     {#    ------------------------#}
+
+    $('#lname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#lalert').css('color', 'red');
+            $("#lalert").html("Only Characters allowed")
+              $('#lname').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#lname').removeAttr('style');
+              $('#lalert').removeAttr('style');
+        }
+    });
+{#    ------------------------#}
+   $('#lname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#lalert').css('color', 'red');
+            $("#lalert").html("Only Characters allowed")
+              $('#lname').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#lname').removeAttr('style');
+              $('#lalert').removeAttr('style');
+        }
+    });
+{#    ------------------------#}
+
+{#    ------------------------#}
+
+    $('#pin').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#pialert').css('color', 'red');
+            $("#pialert").html("Only Numbers allowed")
+              $('#pin').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=6){
+                $('#pialert').css('color', 'red');
+            $("#pialert").html("Must be 6")
+              $('#pin').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#pin').removeAttr('style');
+                $('#pialert').removeAttr('style');
+            }
+        }
+    });
+
+
+    $('#phone').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#phalert').css('color', 'red');
+            $("#phalert").html("Only Numbers allowed")
+              $('#pin').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=10){
+                $('#phalert').css('color', 'red');
+            $("#phalert").html("Must be 10")
+              $('#phone').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#phone').removeAttr('style');
+                $('#phalert').removeAttr('style');
+            }
+        }
+    });
+
+
+
+{#    ------------------------#}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
+
+
+</body>
+{% endblock %}
+
+{#</html>#}

@@ -1,0 +1,52 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'user/userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="view_foodchart_add">
+  <table width="261" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>VIEW FOODCHART AND DONATION</b></td>
+  </tr>
+    <tr>
+      <th colspan="5">Date
+      <input type="date" name="textfield" min="{{ min }}" class="btn btn-light " required/>
+      </td>
+    </tr>
+    <tr>
+      <th>Select</th>
+      <th>Day Time </th>
+      <th>Day Type </th>
+      <th>Amount</th>
+      <th>&nbsp;</th>
+    </tr>
+                   {% for i in val %}
+
+    <tr>
+    <td><input type="checkbox" name="check"  value="{{ i.id }}"></td>
+
+      <td>&nbsp;{{ i.daytime }}</td>
+      <td>&nbsp;{{ i.daytype }}</td>
+      <td>&nbsp;{{ i.amount }}</td>
+    <td></td>
+
+    </tr>
+            {% endfor %}
+<tr>
+      <td colspan="5">
+        <div align="center">
+          <input type="submit" name="Submit" value="Donate" class="btn btn-primary  text-white " />
+          </div>
+    </td>
+    </tr>
+  </table>
+
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

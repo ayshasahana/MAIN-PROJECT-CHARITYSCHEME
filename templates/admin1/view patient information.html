@@ -1,0 +1,54 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/view_patient_information_search">
+  <table width="258" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>VIEW PATIENT INFORMATION</b></td>
+  </tr>
+    <tr>
+      <th colspan="6">Name
+      <input type="text" name="textfield" placeholder="Name/Gender"/>
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th>Slno</th>
+      <th>P-name</th>
+{#      <th>Place</th>#}
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Joining Date</th>
+      <th>Disease</th>
+              <th>phone</th>
+
+      <th>prescription</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+    <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.fname }}{{ i.lname }}<br> <img src="media/{{ i.Image }}" width="40%"></td>
+{#      <td>&nbsp;{{ i.place }},{{ i.post }},{{i.pin  }}</td>#}
+      <td>{{ i.gender }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>{{ i.sdate }}</td>
+      <td>&nbsp;{{ i.disease }}</td>
+              <td>&nbsp;{{ i.phone }}</td>
+
+      <td> <a href="{{ i.idproof.url}}" class="btn btn-secondary" download>Download</a></td>
+    </tr>
+                    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

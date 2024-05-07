@@ -1,0 +1,75 @@
+{% extends 'admin1/index.html' %}
+
+{% block body %}
+<body>
+
+  <div class="container">
+    <div class="card mt-5" >
+      <div class="card-header bg-dark text-white">
+        <h3 class="card-title">REPORT GENERATION</h3>
+      </div>
+      <div class="card-body">
+        <form id="form1" name="form1" method="post" action="/search_generate_report">
+          <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="startingDate" class="form-label"><b>Starting Date:</b></label>
+              <input type="date" class="form-control" id="startingdate" name="date" required>
+            </div>
+            <div class="col-md-6">
+                <label for="endingDate" class="form-label"><b>Ending Date:</b></label>
+              <input type="date" class="form-control" id="endingdate" name="date1" required>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" >View Report</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card mt-3">
+    {% if report == "yes" %}
+    <div id="targetArea" > <!-- Initially hidden -->
+    <table class="table table-responsive table-bordered">
+    <tr><td align="center" colspan="4"><b> Donation Report</b></td></tr>
+        <tr><td colspan="4" align="center"><b>From Date :{{ fdate }}  To Date:{{ tdate }} </b></td></tr>
+
+    <tr>
+        <th>Date</th>
+        <th>User Name</th>
+        <td align="center"><b>Amount</b></td>
+        <td align="center"><b>Need</b></td>
+    </tr>
+    {% for i in val %}
+        <tr>
+            <td>{{ i.date }}</td>
+            <td>{{ i.userid}}</td>
+            <td align="right">{{ i.amount }}.00</td>
+            <td  align="center">{{ i.needid }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4" align="center"><b>Total:{{ s }}0</b></td>
+    </tr>
+    </table>
+    </div>
+
+    <br>
+{#    <button class="btn btn-primary" onclick="printScreen()"> Print</button>#}
+        <a href="/media/report.pdf" class="btn btn-primary" download>Print</a>
+    </div>
+  {% endif %}
+  </div>
+
+<script>
+function printScreen() {
+    var printContents = document.getElementById("targetArea").innerHTML;
+    var originalContents = document.getElementById("targetArea").innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents; // Restore original content after printing
+}
+
+
+</script>
+</body>
+{% endblock %}

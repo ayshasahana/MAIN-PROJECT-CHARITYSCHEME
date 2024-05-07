@@ -1,0 +1,57 @@
+{% extends 'admin1/index.html' %}
+{% block body %}
+
+
+<style>
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
+.icon-black{
+    color: black;
+}
+</style>
+<body>
+
+<form id="form1" name="form1" method="post" action="searchdep">
+
+  <table width="345" border="1" class="table table-striped">
+   <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD & MANAGE DEPARTMENT</b></td>
+  </tr>
+    <tr>
+      <th colspan="4">Department
+        <input type="text" name="textfield" />
+      <label>
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+      </label></th>
+    </tr>
+    <tr>
+      <th width="100">Sl No</th>
+      <th width="100">Department</th>
+      <th width="250">Details</th>
+      <th  width="100">Edit</th>
+      <th  width="100" >Delete</th>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>{{ i.d_name }}</td>
+      <td>&nbsp;{{ i.Details }}</td>
+      <td><p><a href="editdep/{{ i.id }}" style="width:100px;height: 100px;"><h3><i class="bi bi-pencil-square icon-blue" ></i></h3></a></p></td>
+      <td><p><a href="deletedep/{{ i.id }}"style="width:100px;height: 100px;"><h3><i class="bi bi-trash3 icon-red "></i></h3></a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="adddepatment#about"><h3><i class="bi bi-plus-square-fill icon-black" ></i></h3></a></div></td>
+    </tr>
+  </table>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}
+{#</html>#}

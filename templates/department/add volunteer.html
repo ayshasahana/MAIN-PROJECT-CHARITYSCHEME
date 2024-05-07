@@ -1,0 +1,278 @@
+
+{% extends 'department/depindex.html' %}
+{% block body %}
+
+
+<body>
+<form action="/addvolcode#about" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered table-dark" style="width:100%;" >
+       <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD VOLUNTEERS</b></td>
+  </tr>
+    <tr>
+      <td>F-name</td>
+      <td><input type="text"  name="textfield" pattern="[A-Z a-z.]{3,25}"  id="fname" title="Name must be in characters" required /><p id="falert"></p></td>
+    </tr>
+    <tr>
+      <td>L-name</td>
+      <td><input type="text" name="textfield2" pattern="[A-Z a-z.]{0,25}" id="lname"/><p id="lalert"></p></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="radiobutton" type="radio" value="Male" required/>
+        Male 
+        <input name="radiobutton" type="radio" value="Female" />
+        Female</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield3"  pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+
+    <tr>
+      <td>Post</td>
+      <td><input type="text" name="textfield5"  pattern="[A-Z a-z.]{3,25}"  id="post"/></td>
+    </tr>
+       <tr>
+      <td>Pin</td>
+      <td><input type="text" name="textfield4" required pattern="[0-9]{6}"  id="pin"/><p id="pialert"></p></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" name="textfield6" required pattern="[6789][0-9]{9}" id="phone" /><p id="phalert"></p></td>
+
+    </tr>
+
+       <tr>
+      <td>Email</td>
+      <td><input type="email" name="textfield10"  required pattern="[a-z_0-9]{2,30}[@][a-z]{2,10}[.][a-z.]{2,20}" id="cd"/><p id="p1"  style="color:red;" ></p></td>
+
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="file" accept="image/*"/></td>
+    </tr>
+    <tr>
+      <td>Aadhar no</td>
+      <td><input type="text" name="textfield8"  required pattern="[0-9]{12}" id="aadharno"/><p id="adalert"></p></td>
+    </tr>
+
+    <tr>
+      <td>Username</td>
+      <td><input type="text" name="textfield7" id="un" />  <div id="uu" style="color:red;"></div></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="text" name="textfield82"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SAVE" id="b" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript" src="../static/home/reg/js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="../static/home/reg/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#un").keyup(function () {
+      var username = $(this).val();
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/reg",
+        data:{
+                 username: username
+
+
+        },
+        dataType: 'json',
+        success: function( data )
+        {
+
+            if (data.is_taken) {
+            document.getElementById("uu").innerText="Username is already existing";
+          }
+          else
+            { document.getElementById("uu").innerText="";}
+        }
+     })
+  });
+$('#fname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#falert').css('color', 'red');
+            $("#falert").html("Only Characters allowed")
+              $('#fname').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#fname').removeAttr('style');
+              $('#falert').removeAttr('style');
+        }
+    });
+
+     {#    ------------------------#}
+
+    $('#lname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#lalert').css('color', 'red');
+            $("#lalert").html("Only Characters allowed")
+              $('#lname').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#lname').removeAttr('style');
+              $('#lalert').removeAttr('style');
+        }
+    });
+{#    ------------------------#}
+
+{#    ------------------------#}
+
+    $('#pin').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#pialert').css('color', 'red');
+            $("#pialert").html("Only Numbers allowed")
+              $('#pin').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=6){
+                $('#pialert').css('color', 'red');
+            $("#pialert").html("Must be 6")
+              $('#pin').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#pin').removeAttr('style');
+                $('#pialert').removeAttr('style');
+            }
+        }
+    });
+
+
+    $('#phone').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#phalert').css('color', 'red');
+            $("#phalert").html("Only Numbers allowed")
+              $('#pin').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=10){
+                $('#phalert').css('color', 'red');
+            $("#phalert").html("Must be 10")
+              $('#phone').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#phone').removeAttr('style');
+                $('#phalert').removeAttr('style');
+            }
+        }
+    });
+
+
+
+{#    ------------------------#}
+
+
+
+    $('#aadharno').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#adalert').css('color', 'red');
+            $("#adalert").html("Only Numbers allowed")
+              $('#aadharno').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=12){
+                $('#adalert').css('color', 'red');
+            $("#adalert").html("Must be 12")
+              $('#aadharno').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#aadharno').removeAttr('style');
+                $('#adalert').removeAttr('style');
+            }
+        }
+    });
+
+
+
+{#    ------------------------#}
+
+
+    $("#cd").keyup(function () {
+      var code = $(this).val();
+
+
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/check_email1",
+        data:{
+                 code: code
+
+
+        },
+
+        success: function( data )
+        {
+
+
+            if (data.key) {
+                document.getElementById("b").setAttribute("disabled", true);
+            document.getElementById("p1").innerText="This email already taken.";
+          }
+          else {
+                document.getElementById("p1").innerText="";
+                document.getElementById("b").removeAttribute("disabled");
+            }
+        }
+
+
+     })
+});
+
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+</body>
+{% endblock %}
+
+

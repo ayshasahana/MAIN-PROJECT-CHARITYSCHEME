@@ -1,0 +1,74 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'department/depindex.html' %}
+{% block body %}
+<body>
+<form action="/editcode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered table-dark" style="width:100%;">
+   <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>EDIT VOLUNTEERS</b></td>
+  </tr>
+    <tr>
+      <td>F-name</td>
+      <td><input type="text" name="textfield" value="{{ val.fname }}" /></td>
+    </tr>
+    <tr>
+      <td>L-name</td>
+      <td><input type="text" name="textfield2" value="{{ val.lname }}"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="radiobutton" type="radio" value="Male" {% if val.gender == 'Male' %} checked {% endif %}/>
+        Male
+        <input name="radiobutton" type="radio" value="Female"  {% if val.gender == 'Female' %} checked {% endif %}/>
+        Female</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield3" value="{{ val.place }}"/></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><input type="text" name="textfield4" value="{{ val.pin }} "/></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><input type="text" name="textfield5"  value="{{ val.post}}"/></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" name="textfield6" value="{{ val.phone}}" /></td>
+    </tr>
+
+
+  <tr>
+      <td>Email</td>
+      <td><input type="email" name="textfield10" value="{{ val.email}}" /></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="file" />
+      <img src="media/{{ val.photo }}" width="40dp" height="40dp"></td>
+    </tr>
+    <tr>
+      <td>Aadhar no</td>
+      <td><input type="text" name="textfield8" value="{{ val.aadharno}}" /></td>
+    </tr>
+
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SAVE" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+
+{% endblock %}
+{#</html>#}

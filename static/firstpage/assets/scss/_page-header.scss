@@ -1,0 +1,50 @@
+.page-header {
+	background-size: cover;
+	background-color: $paroti-black;
+	padding-top: 9.375rem;
+	padding-bottom: 9.375rem;
+	text-align: center;
+
+	&__title {
+		font-size: 30px;
+		color: #ffffff;
+		font-weight: 800;
+		margin: 0;
+		margin-top: 3px;
+		margin-bottom: -10px;
+
+		@include devices(md) {
+			font-size: 40px;
+		}
+
+		@include devices(lg) {
+			font-size: 50px;
+			margin-top: -6px;
+		}
+	}
+}
+
+.breadcrumb-one {
+	margin: 0;
+	display: inline-flex;
+	flex-wrap: wrap;
+	position: relative;
+	top: -12px;
+
+	li {
+		font-size: 14px;
+		color: #fff;
+
+		&:not(:last-of-type)::after {
+			content: '/';
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		span,
+		a {
+			color: inherit;
+			transition: all 500ms ease;
+		}
+	}
+}

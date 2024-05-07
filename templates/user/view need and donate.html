@@ -1,0 +1,63 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{% extends 'user/userindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/search1">
+  <table width="406" border="1" class="table table-striped">
+
+   <tr>
+      <td class="bg-dark text-white" colspan="10" style="font-size: 20px" align="center"><b>VIEW NEEDS AND DONATION</b></td>
+  </tr>
+    <tr>
+      <th colspan="10">Department
+           <select name="select"  class="btn btn-light " >
+     <option value=0>All</option>
+             {% for i in val1 %}
+            <option value="{{ i.id }}" {% if i.id == dt %} selected {% endif %}>{{ i.d_name}}</option>
+            {% endfor %}
+        </select>
+      <input type="date" name="date" value="{{ date }}" class="btn btn-light ">
+
+      <input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th >Slno</th>
+      <th >Need</th>
+        <a href=""></a>
+      <th >Department</th>
+      <th >Details</th>
+      <th style="width: 200px;">Date</th>
+      <th >Amount</td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+        <td ></td>
+    </tr>
+             {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.needs }}</td>
+      <td>{{ i.d_name}}</td>
+      <td>{{ i.details}}</td>
+      <td width="100">{{ i.date}}</td>
+      <td>{{ i.amount}}0 <br></td>
+      <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+      <td>{% if i.amt == 0 %}<a href="/send_need_response/{{ i.id }}"  class="btn btn-primary">donate</a>
+      {% else %} Donated {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+
+{#</html>#}

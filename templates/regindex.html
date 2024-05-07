@@ -1,0 +1,313 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{#<!DOCTYPE HTML>#}
+<html>
+{% load static %}
+<head>
+	<title>OP Registration Form a Responsive Widget Template :: w3layouts</title>
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="OP Registration Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+
+		}, false);
+
+
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tags -->w
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="../static/home/reg/css/jquery-ui.css" />
+	<link href="../static/home/reg/css/style.css" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
+	<!--//fonts-->
+</head>
+<style>
+    body{
+        background-image: url("../static/firstpage/assets/images/resources/bg.jpg");
+    }
+    p{
+        font-size: 20px;
+        color: #fbfbff;
+        width: 200px;
+    }
+</style>
+<body>
+	<!--background-->
+	<h1>Charity Scheme and Fund Tracking </h1>
+	<div class="register-form-w3layouts">
+		<!-- Form starts here -->
+		<form action="/registration" method="post">
+			<h3 class="sub-heading-agileits">Registration Here!</h3>
+			<div class="main-flex-w3ls-sectns">
+{#				<div class="field-agileinfo-spc form-w3-agile-text1">#}
+                    <td></td>
+                <td><p>First Name:</p><input type="text" name="Name"required pattern="[A-Z a-z.]{3,25}" id="fname" ><p id="falert"></p>
+{#				</div>#}</td>
+			</div>
+            <div class="main-flex-w3ls-sectns">
+{#				<div class="field-agileinfo-spc form-w3-agile-text2">#}
+
+					<p>Last Name:</p></td><input type="text" name="lName" pattern="[A-Z a-z.]{0,25}" id="lname"><p id="lalert"></p>
+{#				</div>#}
+            </div>
+			<div class="main-flex-w3ls-sectns">
+{#				<div class="field-agileinfo-spc form-w3-agile-text1">#}
+					<p>Email:</p><input type="email" name="Email"  id="cd" required pattern="[a-z_0-9]{2,30}[@][a-z]{2,10}[.][a-z.]{2,20}"><p id="p1"  style="color:red;" ></p>
+{#				</div>#}
+            </div>
+            <div class="main-flex-w3ls-sectns">
+{#                  <div class="field-agileinfo-spc form-w3-agile-text2">#}
+					<p>Phone:</p><input type="text" name="Phone no" required pattern="[6789][0-9]{9}" id="phone"><p id="phalert"></p>
+{#				</div>#}
+{#				</div>#}
+			</div>
+			<div class="main-flex-w3ls-sectns">
+{#				<div class="field-agileinfo-spc form-w3-agile-text2">#}
+				<p>Gender:</p><select class="form-control"name="gender">
+
+						<option value="">choose</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Others">Other</option>
+					</select>
+{#				</div>#}
+
+			</div>
+
+
+			<p>Address:</p><div class="field-agileinfo-spc form-w3-agile-text">
+				<textarea name="Message"  required></textarea>
+			</div>
+			<p>Username:</p><div class="main-flex-w3ls-sectns">
+{#                  <div class="field-agileinfo-spc form-w3-agile-text2">#}
+					<input type="text" name="username" required id="un">
+                      <div id="uu" style="color:red;"></div>
+{#				</div>#}
+			</div>
+           <p>Password:</p> <div class="main-flex-w3ls-sectns">
+{#                  <div class="field-agileinfo-spc form-w3-agile-text2">#}
+					<input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+{#				</div>#}
+			</div>
+
+
+
+
+
+
+
+{#			<h2 class="sub-heading-agileits">Emergency Contact Details</h2>#}
+{#			<div class="main-flex-w3ls-sectns">#}
+{#				<div class="field-agileinfo-spc form-w3-agile-text1">#}
+{#					<input type="text" name="Name" placeholder="First Name" required="">#}
+{#				</div>#}
+{#				<div class="field-agileinfo-spc form-w3-agile-text2">#}
+{#					<input type="text" name="Name" placeholder="Last Name" required="">#}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="main-flex-w3ls-sectns">#}
+{#				<div class="field-agileinfo-spc form-w3-agile-text1">#}
+{#					<input type="text" name="Relationship" placeholder="Relationship" required="">#}
+{#				</div>#}
+{#				<div class="field-agileinfo-spc form-w3-agile-text2">#}
+{#					<input type="text" name="Phone no" placeholder="Phone Number" required="">#}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="radio-section">#}
+{#				<h6>Taking any medications currently</h6>#}
+{#				<ul class="radio-buttons-w3-agileits">#}
+{#					<li>#}
+{#						<input type="radio" id="a-option" name="selector1">#}
+{#						<label for="a-option">Yes</label>#}
+{#						<div class="check"></div>#}
+{#					</li>#}
+{#					<li>#}
+{#						<input type="radio" id="b-option" name="selector1">#}
+{#						<label for="b-option">No</label>#}
+{#						<div class="check">#}
+{#							<div class="inside"></div>#}
+{#						</div>#}
+{#					</li>#}
+{#				</ul>#}
+{#				<div class="clear"></div>#}
+{#			</div>#}
+{#			<div class="field-agileinfo-spc form-w3-agile-text">#}
+{#				<textarea name="Message" placeholder="If you are taking please list them here.."></textarea>#}
+{#			</div>#}
+			<input type="submit"  id="b" value="Submit">
+
+			<div class="clear"></div>
+		</form>
+		<!--// Form starts here -->
+	</div>
+	<!--copyright-->
+{#	<div class="copyright">#}
+{#		<p>&copy; 2018. OP Registration Form . All Rights Reserved | Design by#}
+{#			<a href="http://w3layouts.com/" target="_blank">W3layouts</a>#}
+{#		</p>#}
+{#	</div>#}
+	<!--//copyright-->
+	<script type="text/javascript" src="../static/home/reg/js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="../static/home/reg/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#un").keyup(function () {
+      var username = $(this).val();
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/reg",
+        data:{
+                 username: username
+
+
+        },
+        dataType: 'json',
+        success: function( data )
+        {
+
+            if (data.is_taken) {
+            document.getElementById("uu").innerText="Username is already existing";
+          }
+          else
+            { document.getElementById("uu").innerText="";}
+        }
+     })
+  });
+
+
+ $('#fname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#falert').css('color', 'red');
+            $("#falert").html("Only Characters allowed")
+              $('#fname').css('background-color', 'white');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#fname').removeAttr('style');
+              $('#falert').removeAttr('style');
+        }
+    });
+
+     {#    ------------------------#}
+
+ $('#lname').on('keyup', function(){
+        var inputValue = $(this).val();
+        var regex = /^[a-zA-Z]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#lalert').css('color', 'red');
+            $("#lalert").html("Only Characters allowed")
+              $('#lname').css('background-color', 'white');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+              $('#lname').removeAttr('style');
+              $('#lalert').removeAttr('style');
+        }
+    });
+{#    ------------------------#}
+
+  $('#phone').on('keyup', function(){
+        var inputValue = $(this).val();
+         var regex = /^[0-9- ]*$/;
+        if(!regex.test(inputValue)) {
+            $(this).val('');
+             $('#phalert').css('color', 'red');
+            $("#phalert").html("Only Numbers allowed")
+              $('#pin').css('background-color', 'yellow');
+{#            alert('Please enter only alphabets.');#}
+        }
+        else{
+
+            if (inputValue.length!=10){
+                $('#phalert').css('color', 'red');
+            $("#phalert").html("Must be 10")
+              $('#phone').css('background-color', 'yellow');
+
+            }
+            else {
+                $('#phone').removeAttr('style');
+                $('#phalert').removeAttr('style');
+            }
+        }
+    });
+
+
+
+{#    ------------------------#}
+
+
+
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#cd").keyup(function () {
+      var code = $(this).val();
+
+
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/check_email",
+        data:{
+                 code: code
+
+
+        },
+
+        success: function( data )
+        {
+
+
+            if (data.key) {
+                document.getElementById("b").setAttribute("disabled", true);
+            document.getElementById("p1").innerText="This email already taken.";
+
+          }
+          else {
+                document.getElementById("p1").innerText="";
+                document.getElementById("b").removeAttribute("disabled");
+            }
+        }
+
+
+     })
+});
+
+    </script>
+
+</body>
+
+</html>

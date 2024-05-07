@@ -1,0 +1,66 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+
+{% extends 'admin1/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/editcode_foodchart">
+  <table  class="table table-bordered table-dark" style="width:100%;">
+      <tr>
+      <td class="bg-dark text-white" colspan="9" style="font-size: 20px" align="center"><b>ADD FOODCHART</b></td>
+  </tr>
+{#    <tr>#}
+{#      <td width="48">Day</td>#}
+{#      <td width="177"><label>#}
+{#        <select name="select">#}
+{#           <option>Sunday</option>#}
+{#          <option>Monday</option>#}
+{#          <option>Tuesday</option>#}
+{#          <option>Wednesday</option>#}
+{#          <option>Thusday</option>#}
+{#          <option>Friday</option>#}
+{#          <option>Saturday</option>#}
+{##}
+{#        </select>#}
+{#      </label></td>#}
+{#    </tr>#}
+    <tr>
+      <td>Day Time </td>
+      <td><select name="select2">
+          <option value="BreakFast" {% if val.daytime == "BreakFast" %} selected {% endif %}>BreakFast</option>
+          <option value="Lunch" {% if val.daytime == "Lunch" %} selected {% endif %}>Lunch</option>
+          <option value="Evening"  {% if val.daytime == "Evening" %} selected {% endif %}>Evening</option>
+          <option value="Dinner "  {% if val.daytime == "Dinner " %} selected {% endif %}>Dinner </option>
+          <option></option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><select name="select3">
+
+        <option value="Normal" {% if val.daytype == "Normal" %} selected {% endif %}>Normal</option>
+        <option value="Special"{% if val.daytype == "Special" %} selected {% endif %}>Special </option>
+
+ </select></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><label>
+      <input type="text" name="textfield" value="{{ val.amount }}0"/>
+      </label></td>
+    </tr>
+     <tr align="center">
+      <td colspan="2">
+          <input type="submit" name="Submit" value="SAVE" />
+      </td>
+  </table>
+</form>
+</body>
+{#</html>#}{% endblock %}
+

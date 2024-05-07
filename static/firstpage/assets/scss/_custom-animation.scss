@@ -1,0 +1,97 @@
+@keyframes anime {
+  0% {
+    width: 0px;
+    height: 0px;
+    box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  20% {
+    box-shadow: inset 0px 5px 60px 15px rgba(255, 255, 255, 0.4);
+  }
+
+  40% {
+    box-shadow: inset 0px 5px 60px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    width: 150px;
+    height: 150px;
+    box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes btnIconMove {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+
+  25%,
+  75% {
+    transform: rotate(5deg) translate(0px, 5px);
+  }
+}
+
+@keyframes float-bob-y {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-bob-y {
+  animation-name: float-bob-y;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes float-bob-x {
+  0% {
+    transform: translateX(-30px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(-30px);
+  }
+}
+
+.float-bob-x {
+  animation-name: float-bob-x;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bgSlide {
+  0% {
+    background-position: 0 100%;
+  }
+  20% {
+    background-position: -100px 100%;
+  }
+  40% {
+    background-position: -200px 100%;
+  }
+  60% {
+    background-position: -150px 100%;
+  }
+  80% {
+    background-position: -100px 100%;
+  }
+  100% {
+    background-position: 0px 100%;
+  }
+}

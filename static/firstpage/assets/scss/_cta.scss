@@ -1,0 +1,287 @@
+.cta-one {
+  background-color: $paroti-black;
+  position: relative;
+  overflow: hidden;
+
+  &--pad-bottom {
+    padding-bottom: 13.75rem;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: color-dodge;
+    background-color: $paroti-black;
+    opacity: 0.3;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__shape {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    display: none;
+
+    @include devices(lg) {
+      display: block;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .sec-title {
+    padding-bottom: 40px;
+  }
+
+  .sec-title__tagline {
+    color: #ffffff;
+    opacity: 0.7;
+    margin-bottom: 22px;
+
+    &::after {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 20px;
+    }
+  }
+
+  .sec-title__title {
+    color: #ffffff;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(../images/shapes/cta-s-2-1.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center 85%;
+      }
+    }
+  }
+
+  &__btn {
+    margin-bottom: -10px;
+  }
+}
+
+.cta-two {
+  background-color: $paroti-primary;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  padding-left: 3.5625rem;
+  padding-right: 3.5625rem;
+  position: relative;
+  &__icon {
+    font-size: 58px;
+    color: #fff;
+  }
+  &__title {
+    margin: 0;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 90px;
+    margin-top: 18px;
+  }
+  &__btn {
+    &::before {
+      background-color: $paroti-secondary;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    bottom: 152px;
+    right: 127px;
+    background-image: url(../images/shapes/cta-2-arrow-1.png);
+    width: 40px;
+    height: 67px;
+    background-repeat: no-repeat;
+    display: block;
+    animation: btnIconMove 4s linear 0ms infinite;
+  }
+}
+
+.cta-three {
+  &__inner {
+    background-color: #8139e7;
+    position: relative;
+    text-align: center;
+    padding: 4.25rem 15px;
+    @include devices(lg) {
+      text-align: left;
+      padding: 0;
+      padding-right: 5rem;
+      display: flex;
+      align-items: center;
+    }
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #8139e7;
+      opacity: 0.05;
+      mix-blend-mode: luminosity;
+      background-position: bottom center;
+      background-repeat: repeat-x;
+      animation: bgSlide 20s linear infinite;
+    }
+  }
+  &__icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #7832dc;
+    @include devices(lg) {
+      height: 197px;
+      margin-right: 57px;
+    }
+    i {
+      font-size: 58px;
+    }
+  }
+  &__title {
+    position: relative;
+    font-size: 2.25rem;
+    line-height: 1.2em;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.04em;
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include devices(lg) {
+      max-width: 415px;
+      margin-right: auto;
+      margin: 0;
+    }
+  }
+  &__btns {
+    display: inline-flex;
+    position: relative;
+    @include devices(lg) {
+      margin-left: auto;
+    }
+  }
+
+  &__btn {
+    &::before {
+      background-color: $paroti-secondary;
+    }
+    &::after {
+      background-color: $paroti-base;
+    }
+  }
+}
+
+.cta-four {
+  margin-bottom: 2px;
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .row {
+    --bs-gutter-x: 2px;
+    --bs-gutter-y: 2px;
+  }
+  &__item {
+    --accent-color: #{$paroti-base};
+    position: relative;
+    text-align: center;
+    background-color: $paroti-black;
+    padding-top: 5.9375rem;
+    padding-bottom: 4.875rem;
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $paroti-black;
+      opacity: 0.3;
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: color-dodge;
+    }
+    &__icon {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 27px;
+      transition: all 500ms ease;
+      z-index: 1;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        bottom: -6px;
+        left: -6px;
+        right: -6px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      i {
+        color: var(--accent-color);
+        font-size: 32px;
+        transition: all 500ms ease;
+      }
+    }
+    &:hover &__icon {
+      background-color: var(--accent-color);
+      i {
+        color: #fff;
+      }
+    }
+    &__title {
+      position: relative;
+      color: #fff;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0;
+      line-height: 1.2em;
+      max-width: 278px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1;
+      a {
+        color: inherit;
+        @include borderHover;
+      }
+    }
+  }
+}
